@@ -3,9 +3,11 @@ package com.example.demothree;
 public class ItemMenu {
     String itemName;
     int itemIcon;
+
     public ItemMenu(String itemName) {
         this.itemName = itemName;
     }
+
     public String getItemName() {
         return itemName;
     }
