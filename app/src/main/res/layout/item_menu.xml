@@ -2,23 +2,26 @@
 <layout  xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="adapter"
-            type="com.example.demothree.main.MainAdapter" />
+            name="itemMenu"
+            type="com.example.demothree.ItemMenu" />
     </data>
     <LinearLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".main.MainActivity"
         tools:showIn="@layout/activity_main">
 
-    <ListView
-        android:id="@+id/id_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:adapter="@{ adapter }"/>
+        <TextView
+            android:id="@+id/id_item_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:background="#3BDBEF"
+            android:text="@{itemMenu.itemName}"/>
     </LinearLayout>
 </layout>
