@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
-            name="itemMenu"
+            name="item"
             type="com.example.demothree.ItemMenu" />
+
+        <variable
+            name="menuItemClick"
+            type="com.example.demothree.main.MainItemListener" />
     </data>
+
     <LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".main.MainActivity"
-        tools:showIn="@layout/activity_main">
+        android:layout_margin="15dp"
+        android:background="#F3D2D2"
+        android:onClick="@{(v) -> menuItemClick.mainItemClick()}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:imgSrc="@{item.itemIcon}" />
 
         <TextView
-            android:id="@+id/id_item_list_view"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:background="#3BDBEF"
-            android:text="@{itemMenu.itemName}"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@{item.itemName}"
+            android:textColor="#4C0202" />
     </LinearLayout>
 </layout>
